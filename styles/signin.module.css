@@ -1,0 +1,25 @@
+.heading{
+   color: #fff !important;
+   text-decoration: none;
+}
+
+/* if we use link tag than take only href attribute so use anchor tag inside link */
+
+
+.eye_style{
+    position: relative;
+}
+
+.eye{
+    position: absolute;
+   font-size: 30px;
+   right: 10px;
+   top: 17px;
+   cursor: pointer;
+}
+
+.avatar{
+    background-color: blue !important;
+    color: #fff !important;
+    margin-bottom: 5px;
+}
