@@ -25,8 +25,8 @@ const Signin = () => {
     const adddata = () => {
 
         let userdata = localStorage.getItem("users");
-        const checkdata = JSON.parse(userdata)
-        console.log(checkdata[0].email);
+        const checkdata = JSON.parse(userdata);
+        // console.log(checkdata);
 
         const { email, password } = signval;
 
@@ -47,7 +47,12 @@ const Signin = () => {
                 position: "top-center",
             });
         } else {
-            if (checkdata[0].email != email && checkdata[0].password != password) {
+            const validate = checkdata.filter((element,k)=>{
+                return element.email == email && element.password == password
+            });
+            console.log(validate)
+
+            if (validate.length === 0) {
                 toast.error('invalid details!', {
                     position: "top-center",
                 });
@@ -56,7 +61,7 @@ const Signin = () => {
                     position: "top-center",
                 });
                 setData([...data, signval]);
-                localStorage.setItem("loginuserdata", JSON.stringify([...data, checkdata]));
+                localStorage.setItem("loginuserdata", JSON.stringify([...data, validate]));
                 history.push("/detail");
                 setSignVal({ ...signval, email: "", password: "" });
             }
