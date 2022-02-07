@@ -57,9 +57,9 @@ const Signin = () => {
                     position: "top-center",
                 });
             } else {
-                toast.success('😃 your data successfully added!', {
-                    position: "top-center",
-                });
+                // toast.success('😃 your data successfully added!', {
+                //     position: "top-center",
+                // });
                 setData([...data, signval]);
                 localStorage.setItem("loginuserdata", JSON.stringify([...data, validate]));
                 history.push("/detail");
