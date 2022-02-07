@@ -50,7 +50,7 @@ const Signin = () => {
             const validate = checkdata.filter((element,k)=>{
                 return element.email == email && element.password == password
             });
-            console.log(validate)
+            // console.log(validate)
 
             if (validate.length === 0) {
                 toast.error('invalid details!', {
